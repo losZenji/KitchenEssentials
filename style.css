@@ -211,3 +211,34 @@ header h1 {
   50% { transform: scale(1.15); }
   100% { transform: scale(1); }
 }
+/* Price styling with discount */
+.price {
+  margin-top: 10px;
+  font-size: 0.95em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.original {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 0.9em;
+}
+
+.discounted {
+  color: #ff5e78;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 3px;
+}
+
+.tag {
+  background-color: #ffe0ec;
+  color: #ff4d6d;
+  font-size: 0.7em;
+  padding: 3px 7px;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-weight: 600;
+}

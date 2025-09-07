@@ -175,6 +175,7 @@ header h1 {
 
 /* Owners section */
 .owners-btn {
+  display: none;
   position: absolute;
   top: 20px;
   right: 20px;

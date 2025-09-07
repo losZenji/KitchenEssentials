@@ -11,24 +11,37 @@
 <body>
   <div class="container">
     <header>
-      <h1>Kitchen Essentials</h1>
+      <h1>KITESSENCE</h1>
       <input type="text" id="searchBar" placeholder="Search for an item..." />
+      <!-- Add button to navigate to owners section -->
+      <button id="ownersBtn" class="owners-btn">Owners</button>
     </header>
-<!-- Modal -->
-<div id="modal" class="modal">
-  <div id="modal-content" class="modal-content">
-    <!-- JS will populate content -->
-  </div>
-</div>
 
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div id="modal-content" class="modal-content">
+        <!-- JS will populate content -->
+      </div>
+    </div>
 
+    <!-- Kitchen items grid -->
     <section id="itemsGrid" class="grid">
       <!-- Kitchen items will go here -->
     </section>
-  </div>
-<footer class="site-footer">
-  <h1>Hi Sir, <strong>Hernani CUTIE💕💕💕</strong></h1>
-</footer>
+
+    <!-- Owners section -->
+    <section id="ownersSection" class="grid">
+      <h2>Meet the Owners</h2>
+      <div class="owner-card" data-owner="1">
+        <h3>Kent T. Lorenzo</h3>
+      </div>
+      <div class="owner-card" data-owner="2">
+        <h3>Jared Gumahin</h3>
+      </div>
+
+  <footer class="site-footer">
+    <h1>Hi Sir, <strong>Hernani CUTIE💕💕💕</strong></h1>
+  </footer>
 
   <script src="script.js"></script>
 </body>

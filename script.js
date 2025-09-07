@@ -1,3 +1,11 @@
+// Get the Owners button
+const ownersBtn = document.getElementById('ownersBtn');
+
+// Add smooth scroll functionality for the "Owners" button
+ownersBtn.addEventListener('click', () => {
+  document.getElementById('ownersSection').scrollIntoView({ behavior: 'smooth' });
+});
+
 const kitchenItems = [
   {
     name: "Knife",
@@ -55,12 +63,26 @@ const kitchenItems = [
   }
 ];
 
+// Owners array (Add your owner's data here)
+const owners = [
+  {
+    name: "Kent T. Lorenzo",
+    description: "Is passionate about culinary arts and has a love for creating innovative kitchen tools."
+  },
+  {
+    name: "Jared Gumahin",
+    description: "Enjoys experimenting with new recipes and bringing people together through food."
+  }
+];
+
+// Get DOM elements
 const grid = document.getElementById("itemsGrid");
 const searchBar = document.getElementById("searchBar");
 const modal = document.getElementById("modal");
 const modalContent = document.getElementById("modal-content");
+const body = document.body;
 
-// Render items with discount
+// Render kitchen items with discount
 function renderItems(items) {
   grid.innerHTML = "";
   items.forEach(item => {
@@ -93,9 +115,12 @@ function renderItems(items) {
         </p>
       `;
       modal.style.display = "flex";
+      body.classList.add("blur");
 
+      // Close modal
       document.querySelector(".close").onclick = () => {
         modal.style.display = "none";
+        body.classList.remove("blur");
       };
     });
 
@@ -103,8 +128,7 @@ function renderItems(items) {
   });
 }
 
-
-// Search functionality
+// Search functionality for kitchen items
 searchBar.addEventListener("input", e => {
   const searchTerm = e.target.value.toLowerCase();
   const filteredItems = kitchenItems.filter(item =>
@@ -117,8 +141,33 @@ searchBar.addEventListener("input", e => {
 window.addEventListener("click", e => {
   if (e.target === modal) {
     modal.style.display = "none";
+    body.classList.remove("blur");
   }
 });
 
-// Initial render
+// Render kitchen items on page load
 renderItems(kitchenItems);
+
+// Handle showing owner description when an owner card is clicked
+const ownerCards = document.querySelectorAll('.owner-card');
+
+ownerCards.forEach((card, index) => {
+  card.addEventListener("click", () => {
+    const owner = owners[index]; // Get owner details
+
+    // Display the modal with the owner's details
+    modalContent.innerHTML = `
+      <span class="close">&times;</span>
+      <h2>${owner.name}</h2>
+      <p>${owner.description}</p>
+    `;
+    modal.style.display = "flex";
+    body.classList.add("blur");
+
+    // Close modal
+    document.querySelector(".close").onclick = () => {
+      modal.style.display = "none";
+      body.classList.remove("blur");
+    };
+  });
+});

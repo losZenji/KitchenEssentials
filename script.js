@@ -47,7 +47,7 @@ const kitchenItems = [
     description: "Blends fruits, vegetables, or liquids into smooth mixtures.",
     price: "₱2,832.15"
   },
-{
+  {
     name: "Kent T. Lorenzo",
     image: "https://img.icons8.com/ios/100/blender.png",
     description: "Pinaka gwapo sa act.",
